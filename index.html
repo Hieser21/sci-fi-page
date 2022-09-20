@@ -11,6 +11,8 @@
 
   </head>
   <body class="">
+    <a class="text-light d-flex justify-content-end" href="https://mail.google.com/mail/?tab=rm&authuser=0&ogbl">Gmail</a>
+    <a href="https://www.google.com.bd/imghp?hl=en&tab=ri&authuser=0&ogbl" class="d-flex text-light flex-column justify-content-end">Image</a>
     <form id="form" class="text-light">
      <p class="text-light lead text-center">Custom</p>
   <input class="text-light" id="text" type="text"  name="q" placeholder="Search" />
@@ -34,8 +36,11 @@
         let arr = search.split(' ').join('+');
         console.log(arr);
        
-
+        if(search.includes('www.') || search.includes('http://') || search.includes('https://') || search.includes('.com') || search.includes('.net') || search.includes('.dev') || search.includes('.org')){
+          window.location.href = 'https://' +  search
+        } else {
         window.location.href = 'https://google.com/search?q=' + arr
+      }
       })
     </script>
   </body>
